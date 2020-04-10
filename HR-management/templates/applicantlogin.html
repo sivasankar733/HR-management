@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block main %}<br>
+
+        <table align="center"border="0"style="background-color: springgreen"width="400"height="200">
+            <form action="{% url 'applicant' %}"method="post">
+                {% csrf_token %}
+                <tr>
+                <th>Applicant Login Page</th>
+                </tr>
+                <tr>
+                    <th>User name:
+                <input type="text"placeholder="username"required name="user"></th>
+                </tr>
+                <tr>
+                    <th>Password:
+                        <input type="password"placeholder="password"required name="pas">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button type="submit">Login</button>
+                    </th>
+                </tr>
+            </form>
+            <tr>
+                <th>
+                    {% for x in messages %}
+                        <a href="{% url 'registration' %}">{{ x }}</a>
+                    {% endfor %}
+
+            </th>
+        </tr>
+        </table>
+
+{% endblock %}

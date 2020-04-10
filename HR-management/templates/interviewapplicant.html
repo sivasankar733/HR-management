@@ -1,0 +1,35 @@
+{% extends 'manager_main.html' %}
+{% block manager %}
+    <form action="{% url 'addto' %}"method="post">
+        {% csrf_token %}
+        <table align="center"border="0"style="background-color: cornflowerblue">
+        <tr>
+            <th>ASSIGN AN INTERVIEW FOR AN APPLICANT</th>
+        </tr>
+
+        <tr>
+            <td>Applicant ID:
+                <input type="number"required name="appid" value="{{ ivm.applicantid }}">
+            </td>
+        </tr>
+        <tr>
+            <td>Select Emp ID:
+                <input type="number" required name="emp">
+            </td>
+        </tr>
+        <tr>
+            <td>Shedule Date:
+                <input type="date"required name="date">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">ADD TO INTERVIEW SCHEDULE</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+    {% for x in messages %}
+        <h1>{{ x }}</h1>
+    {% endfor %}
+{% endblock %}

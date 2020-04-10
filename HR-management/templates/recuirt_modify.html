@@ -1,0 +1,18 @@
+{% extends "manager_main.html" %}
+{% block manager %}
+  <form method="post">
+        {% csrf_token %}
+    <h1 style="text-align: center;color: mediumblue;background-color: fuchsia;font-family: Batang">RECUIRTMENT MODIFYUNG PAGE</h1><br><br>
+    <h3 style="text-align: center">Modifying Recuirtment Details</h3><br><br>
+    <h2 style="text-align: center">SELECT OPPERTUNITY CODE
+     <input type="number" required name="t1">
+    </h2><br><br>
+        <center>
+            <button type="submit" >Getdetails</button>
+        </center>
+
+    </form>
+    {% for x in messages %}
+        <h1>{{ x }}</h1>
+    {% endfor %}
+{% endblock %}

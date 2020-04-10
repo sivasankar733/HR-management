@@ -1,0 +1,23 @@
+{% extends 'hrheadhomepage.html' %}
+{% block hrhead %}<br><br>
+    <table align="center"border="2"style="background-color: plum">
+        <tr>
+            <th>INTERVIEW_ID</th>
+            <th>INTERVIEWER</th>
+            <th>Applicant ID</th>
+            <th>Schedule Time</th>
+            <th>Result</th>
+
+        </tr>
+        {% for x in rm %}
+        <tr>
+            <td>{{ x.interviewid }}</td>
+            <td>{{ x.interviewer }}</td>
+            <td>{{ x.applicantid }}</td>
+            <td>{{ x.scheduledate }}</td>
+            <td>{{ x.result }}</td>
+        </tr>
+    {% endfor %}
+
+    </table>
+{% endblock %}

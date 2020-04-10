@@ -1,0 +1,82 @@
+{% extends "applicanthome.html" %}
+{% block applicant %}<br>
+
+        <table align="center"border="0"style="background-color: lightblue"width="500"height="400">
+        <form action="{% url 'application' %}"method="post"enctype="multipart/form-data">
+            {% csrf_token %}
+        <tr>
+            <th style="color: crimson;font-size: 30px">APPLICATION FORM</th>
+        </tr>
+                <tr>
+            <td>NAME:
+                         <input type="text"placeholder="name"required name="na">
+            </td>
+        </tr>
+        <tr>
+            <td>DATE OF BIRTH:
+                         <input type="date"placeholder="date of birth"required name="da">
+            </td>
+        </tr>
+            <tr>
+                <td>EMAIL ID :
+                    <input type="email"placeholder="email"required name="email">
+                </td>
+            </tr>
+        <tr>
+            <td>GENDER:
+                         <input type="radio"value=male name="gen">male
+                         <input type="radio" name="gen">female
+                          <input type="radio" name="gen">other
+            </td>
+
+        <tr>
+            <td>MOBILE NO
+                          <input type="tel"placeholder="mobileno"required name="mobile">
+            </td>
+        </tr>
+        <tr>
+
+        <td>ADDRESS
+                           <input type="text"placeholder="address"required name="address">
+            </td>
+        </tr>
+        <tr>
+            <td>QUALIFICATION
+                <input type="text"placeholder="qualification"required name="quali">
+            </td>
+        </tr>
+       <tr>
+            <td>POST
+                <select name="post">
+                    <option>developer</option>
+                    <option>designer</option>
+                    <option>texter</option>
+                    <option>teamleader</option>
+                </select>
+            </td>
+        </tr>
+       <tr>
+            <td>PERCENTAGE
+                <input type="number"placeholder="percentage"required name="per">
+            </td>
+        </tr>
+       <tr>
+            <td>RESUME UPLOAD TO
+                <input type="file"placeholder="qualification"required name="file">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <button type="submit">Apply</button>
+            </th>
+        </tr>
+          </form>
+        <tr>
+            <th>
+                <a href="{% url 'index' %}" >LOGOUT</a>
+            </th>
+        </tr>
+
+
+        </table>
+{% endblock %}

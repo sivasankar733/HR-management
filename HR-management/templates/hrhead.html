@@ -1,0 +1,30 @@
+{% extends 'hrheadhomepage.html' %}
+{% block hrhead %}<br>
+    <table align="center"border="0"style="background-color: greenyellow"width="400"height="300">
+    <form action="{% url 'hrhome' %}"method="post">
+        {% csrf_token %}
+        <tr>
+            <th>HRHead Logn Page</th>
+        </tr>
+        <tr>
+            <th>User name:
+                <input type="text"placeholder="username"required name="user"></th>
+        </tr>
+        <tr>
+            <th>Password:
+                <input type="password"placeholder="password"required name="pas">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <button type="submit">Login</button>
+            </th>
+        </tr>
+        </form>
+    {% for x in messages %}
+        <tr>
+        <th>{{ x }}</th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

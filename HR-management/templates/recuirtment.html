@@ -1,0 +1,22 @@
+{% extends "manager_main.html" %}
+{% block manager %}<br><br>
+      <table align="center"border="0"width="665"height="200">
+      <tr>
+
+           <th style="background-color:blue;color: yellow;text-align: center;font-size: 40px"colspan="5">RECUIRTMENT SCHEDULE</th>
+      </tr>
+      <tr style="background-color: greenyellow" >
+
+             <th><a class="nav-link" href="{% url 'recuirtmentdetails' %}">NEW RECUIRTMENT DETAILS</a></th>
+             <th><a class="nav-link" href="{% url 'modify' %}">MODIFYING RECUIRTMENT DETAILS</a></th>
+             <th><a class="nav-link" href="{% url 'redelete' %}" >DELETING RECUIRTMENT DETAILS</a></th>
+             <th><a class="nav-link" href="{% url 'managerlog' %}" >BACK</a></th>
+
+      </tr>
+
+  </table>
+    {% for x in messages %}
+        <h1>{{ x }}</h1>
+    {% endfor %}
+
+{% endblock %}

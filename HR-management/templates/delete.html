@@ -1,0 +1,20 @@
+{% extends "admin_manu.html" %}
+{% block admin %}<br><br>
+        <table align="center"border="2"width="665"height="200"style="background: aqua">
+            <tr>
+                <th>EMP IDNO</th>
+                <th>EMP NAME</th>
+                <th>EMP SALARY</th>
+                <th>EMP DESIGNATION</th>
+            </tr>
+            {% for x in object_list %}
+                <tr>
+                    <td><a href="{% url 'deleteemp' x.eidno %}"> {{ x.eidno }}</a></td>
+                    <td>{{ x.ename }}</td>
+                    <td>{{ x.esalary }}</td>
+                    <td>{{ x.edesignation }}</td>
+                </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

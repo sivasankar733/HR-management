@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% block main %}<br><br><br><br>
+    <form action="{% url 'adminlog' %}"method="post">
+    {% csrf_token %}
+        <table align="center"border="2"style="background-color: springgreen"width="500"height="300">
+            <tr >
+                <th colspan="2"><h1>Admin loging</h1></th>
+            </tr>
+
+            <tr>
+                <th>USER NAME</th>
+                <th>{{ af.username }}</th>
+                <th>{{ af.username.errors }}</th>
+            </tr>
+            <tr>
+                <th>PASSWORD</th>
+                <th>{{ af.password }}</th>
+                <th>{{ af.password.errors }}</th>
+            </tr>
+            <tr>
+                <th colspan="2"><button type="submit">save</button></th>
+            </tr>
+
+
+
+        </table>
+    </form>
+
+    {% for x in messages %}
+        <h1 style="color: lightseagreen">{{ x }}</h1>
+    {% endfor %}
+
+{% endblock %}

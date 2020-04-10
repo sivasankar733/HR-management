@@ -1,0 +1,42 @@
+{% extends "admin_manu.html" %}
+{% block admin %}<br>
+
+
+    <form action="{% url 'addemp' %}"method="post">
+        {% csrf_token %}
+        <table align="center"border="2"height="200"width="665"style="background-color: lightgreen">
+             {% for x in messages %}
+        <tr><th colspan="2">{{ x }}</th></tr>
+        {% endfor %}
+            <tr>
+                <th>EMP IDNO</th>
+                <th>{{ adf.eidno }}</th>
+                <th>{{ adf.eidno.errors }}</th>
+            </tr>
+            <tr>
+                <th>EMP NAME</th>
+                <th>{{ adf.ename }}</th>
+                <th>{{ adf.ename.errors }}</th>
+            </tr>
+            <tr>
+                <th>EMP SALARY</th>
+                <th>{{ adf.esalary }}</th>
+                <th>{{ adf.esalary.errors }}</th>
+            </tr>
+            <tr>
+                <th>EMP DESIGNATION
+                </th>
+                <th>
+                    {{ adf.edesignation }}
+                </th>
+                <th>{{ adf.edesignation.errors }}</th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" class="btn btn-danger">save</button>
+                </th>
+            </tr>
+        </table>
+    </form><br><br>
+
+{% endblock %}

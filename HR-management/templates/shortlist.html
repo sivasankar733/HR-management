@@ -1,0 +1,33 @@
+{% extends 'hrheadhomepage.html' %}
+{% block hrhead %}<br><br>
+    <table align="center"border="2"style="background-color: plum"width="665">
+        <tr>
+            <th>APPLICATIONID</th>
+            <th>APPLICATIONNAME</th>
+            <th>QUALIFICATION</th>
+            <th>DATE_OF_BIRTH</th>
+            <th>PERCENTAGE</th>
+            <th>MAID ID</th>
+            <th>CONTACT</th>
+            <th>STATUS</th>
+        </tr>
+        {% for x in apm %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.nam }}</td>
+            <td>{{ x.qualificatio }}</td>
+            <td>{{ x.date }}</td>
+            <td>{{ x.perce }}</td>
+            <td>{{ x.emaii }}</td>
+            <td>{{ x.mobil }}</td>
+            <td>selected</td>
+        </tr>
+            <tr>
+            <th colspan="8">
+                <a href="{% url 'hrhome' %}">Back</a>
+            </th>
+            </tr>
+    {% endfor %}
+
+    </table>
+{% endblock %}
